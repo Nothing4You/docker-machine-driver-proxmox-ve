@@ -1,4 +1,4 @@
-package dockermachinedriverproxmoxve_test
+package main_test
 
 // Test Proxmox VE instance configuration
 // as a singleton according to http://marcio.io/2015/07/singleton-pattern-in-go/
@@ -11,7 +11,7 @@ import (
 	"sync"
 	"testing"
 
-	dockermachinedriverproxmoxve "github.com/lnxbil/docker-machine-driver-proxmox-ve"
+	dockermachinedriverproxmoxve "github.com/nothing4you/docker-machine-driver-proxmox-ve"
 )
 
 // ProxmoxConfig represents all needed login information

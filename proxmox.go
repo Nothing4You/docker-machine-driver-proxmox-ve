@@ -620,9 +620,12 @@ func (p ProxmoxVE) GetEth0IPv4(node string, vmid string) (string, error) {
 		return "", err
 	}
 	for _, nic := range a.Data.Result {
-		if nic.Name == "eth0" {
+		log.Infof("checking interface %s", nic.Name)
+		if nic.Name != "lo" {
 			for _, ip := range nic.IPAdresses {
-				if ip.IPAddressType == "ipv4" {
+				log.Infof("checking %s %s", ip.IPAddressType, ip.IPAddress)
+				if ip.IPAddressType == "ipv4" && ip.IPAddress != "127.0.0.1" {
+					log.Infof("returning %s %s from %s", ip.IPAddressType, ip.IPAddress, nic.Name)
 					return ip.IPAddress, nil
 				}
 			}

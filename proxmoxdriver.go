@@ -800,16 +800,18 @@ func (d *Driver) Create() error {
 			return err
 		}
 
-		// resize
-		resize := NodesNodeQemuVMIDResizePutParameter{
-			Disk: "scsi0",
-			Size: d.DiskSize + "G",
-		}
-		d.debugf("resizing disk '%s' on vmid '%s' to '%s'", resize.Disk, d.VMID, resize.Size)
+		if (d.DiskSize != "keep") {
+			// resize
+			resize := NodesNodeQemuVMIDResizePutParameter{
+				Disk: "scsi0",
+				Size: d.DiskSize + "G",
+			}
+			d.debugf("resizing disk '%s' on vmid '%s' to '%s'", resize.Disk, d.VMID, resize.Size)
 
-		err = d.driver.NodesNodeQemuVMIDResizePut(d.Node, d.VMID, &resize)
-		if err != nil {
-			return err
+			err = d.driver.NodesNodeQemuVMIDResizePut(d.Node, d.VMID, &resize)
+			if err != nil {
+				return err
+			}
 		}
 
 		// set config values

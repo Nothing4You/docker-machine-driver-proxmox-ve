@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "config:base",
+    ":disableDependencyDashboard"
+  ],
+  "prHourlyLimit": 0,
+  "separateMinorPatch": true,
+  "stabilityDays": 1,
+  "pinDigests": true,
+  "packageRules": [
+    {
+      "description": "Schedule digest updates weekly",
+      "matchUpdateTypes": ["digest"],
+      "schedule": ["every 7 days"],
+      "automerge": true
+    }
+  ]
+}

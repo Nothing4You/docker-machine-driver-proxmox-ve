@@ -6,7 +6,7 @@ require (
 	github.com/docker/machine v0.16.2
 	github.com/labstack/gommon v0.3.1
 	github.com/mosolovsa/go_cat_sshfilerw v0.0.0-20170307095915-3f6912dbd9e4
-	golang.org/x/crypto v0.0.0-20211202192323-5770296d904e
+	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3
 	gopkg.in/resty.v1 v1.12.0
 )
 

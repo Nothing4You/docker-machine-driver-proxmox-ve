@@ -1,6 +1,6 @@
 module github.com/nothing4you/docker-machine-driver-proxmox-ve
 
-go 1.17
+go 1.19
 
 require (
 	github.com/docker/machine v0.16.2

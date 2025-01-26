@@ -7,7 +7,7 @@ require (
 	github.com/labstack/gommon v0.3.1
 	github.com/mosolovsa/go_cat_sshfilerw v0.0.0-20170307095915-3f6912dbd9e4
 	golang.org/x/crypto v0.0.0-20211215153901-e495a2d5b3d3
-	gopkg.in/resty.v1 v1.12.0
+	gopkg.in/resty.v2 v2.16.5
 )
 
 require (
